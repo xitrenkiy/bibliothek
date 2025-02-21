@@ -1,7 +1,4 @@
-'use strict';
-
-window.addEventListener('DOMContentLoaded', () => {
-
+function login() {
 	class User {
 		constructor(login, password) {
 			this.login = login;
@@ -18,6 +15,11 @@ window.addEventListener('DOMContentLoaded', () => {
 	
 	loginBtn.addEventListener('click', (e) => {
 		e.preventDefault();
+
+		const existError = document.querySelector('.error');
+		if (existError) {
+			existError.remove();
+		}
 
 		if (login.value === admin.login && password.value === admin.password) {
 			window.location.href = 'biblio.html';
@@ -40,4 +42,6 @@ window.addEventListener('DOMContentLoaded', () => {
 			wrapper.appendChild(div);
 		}
 	});
-});
+}
+
+export default login;

@@ -21,6 +21,7 @@ body {
 	background-color: rgba(255, 255, 255, .5);
 	border-radius: 20px;
 	padding: 15px;
+	transition: 1s all;
 }
 
 .title {
@@ -92,13 +93,13 @@ form {
 }
 
 .login::before {
-	background-image: url(../icon/user-tie-solid.svg); /* Проверь путь */
+	background-image: url(../icon/user-tie-solid.svg);
 	top: 25%;
 	transform: translateY(0%);
 }
 
 .password::before {
-	background-image: url(../icon/user-lock-solid.svg); /* Проверь путь */
+	background-image: url(../icon/user-lock-solid.svg);
 	top: 75%;
 	transform: translateY(0%);
 }
@@ -106,7 +107,6 @@ form {
 a {
 	text-decoration: none;
 	text-align: right;
-	display: block;
 	color: #000;
 	font-size: 14px;
 	font-weight: 400;
@@ -134,7 +134,19 @@ button:hover {
 .error {
 	margin-top: 5px;
 	text-align: center;
-	font-size: 12px;
-	color: red;
-	font-weight: 500;
+	font-size: 16px;
+	color: #ff4d4d;
+	background: rgba(255, 0, 0, .4);
+	border-radius: 10px;
+	font-weight: 700;
+	animation: fadeIn .6s ease-in;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	} 
+	to {
+		opacity: 1;
+	}
 }
