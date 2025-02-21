@@ -60,6 +60,100 @@ function login() {
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (login);
 
+/***/ }),
+
+/***/ "./js/modules/modal.js":
+/*!*****************************!*\
+  !*** ./js/modules/modal.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function modal() {
+	console.log('1');
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
+
+/***/ }),
+
+/***/ "./js/modules/server.js":
+/*!******************************!*\
+  !*** ./js/modules/server.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function getData() {
+	const url = "https://openlibrary.org/search.json?q=test";
+	const headers = new Headers({
+		"User-Agent": "MyAppName/1.0 (myemail@example.com)"
+	});
+	const options = {
+		method: 'GET',
+		headers: headers
+	};
+	fetch(url)
+		.then(response => response.json())
+		.then(data => console.log(data))
+		.catch(error => console.error('Error:', error));
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);
+
+/***/ }),
+
+/***/ "./js/modules/tabs.js":
+/*!****************************!*\
+  !*** ./js/modules/tabs.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function tabs(list, selector, listItem) {
+	const all = document.querySelectorAll(selector),
+		  ul = document.querySelector(list),
+		  listStatus = document.querySelectorAll(listItem);
+
+	ul.addEventListener('click', (e) => {
+		const target = e.target;
+		if (!target.matches(listItem)) return;
+		
+		listStatus.forEach(item => {
+			item.classList.remove('clicked');
+		});
+
+		target.classList.add('clicked');
+	});
+	
+	function setActiveById(id, selector) {
+		const item = document.querySelector(id),
+			  book = document.querySelector(selector);
+
+		item.addEventListener('click', () => {
+			all.forEach(item => {
+				item.classList.remove('active');
+			});
+			book.classList.toggle('active');
+		});
+	}
+
+	setActiveById('#read', '.read');
+	setActiveById('#readed', '.readed');
+	setActiveById('#future', '.future');
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (tabs);
+
 /***/ })
 
 /******/ 	});
@@ -126,6 +220,12 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/login */ "./js/modules/login.js");
+/* harmony import */ var _modules_server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/server */ "./js/modules/server.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./js/modules/tabs.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
+
+
+
 
 
 
@@ -133,6 +233,8 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener('DOMContentLoaded', () => {
 
 	(0,_modules_login__WEBPACK_IMPORTED_MODULE_0__["default"])();
+	(0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.list', '.books', '.list-item');
+	(0,_modules_modal__WEBPACK_IMPORTED_MODULE_3__["default"])();
 });
 })();
 

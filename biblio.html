@@ -1,11 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Библиотека</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/main.css">
+	<script src="https://kit.fontawesome.com/a8b856a2db.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	LEGF
+    <header>
+        <h1>📖 Моя Библиотека</h1>
+        <input type="text" placeholder="🔍 Поиск книг...">
+        <button id="add-book-btn">➕ Add Book</button>
+    </header>
+    
+    <main>
+        <aside>
+            <nav>
+                <ul class="list">
+                    <li id="read" class="list-item clicked">📚 Читаю</li>
+                    <li id="readed" class="list-item">✅ Прочитано</li>
+                    <li id="future" class="list-item">📌 В планах</li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <section class="books read active">
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
+                <h3>1984</h3>
+                <p>Джордж Оруэлл</p>
+            </div>
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
+                <h3>Убить пересмешника</h3>
+                <p>Харпер Ли</p>
+            </div>
+        </section>
+
+		<section class="books readed">
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
+                <h3>1984</h3>
+                <p>Джордж Оруэлл12</p>
+            </div>
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
+                <h3>Убить пересмешника</h3>
+                <p>Харпер Ли</p>
+            </div>
+        </section>
+
+		<section class="books future">
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
+                <h3>1984</h3>
+                <p>Джордж Оруэлл34</p>
+            </div>
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
+                <h3>Убить пересмешника</h3>
+                <p>Харпер Ли</p>
+            </div>
+			<div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
+                <h3>Убить пересмешника</h3>
+                <p>Харпер Ли</p>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>© 2025 Библиотека. Все права защищены.</p>
+    </footer>
+
+	<div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Добавить книгу</h2>
+            <form>
+                <label for="book-title">Название книги:</label>
+                <input type="text" id="book-title" name="book-title" required>
+                
+                <label for="book-author">Автор:</label>
+                <input type="text" id="book-author" name="book-author" required>
+                
+                <label for="book-cover">Ссылка на обложку:</label>
+                <input type="url" id="book-cover" name="book-cover">
+                
+                <button type="submit">Добавить</button>
+            </form>
+        </div>
+    </div>
+
+	<script src="js/bundle.js"></script>
 </body>
 </html>
+
+
+
