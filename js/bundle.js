@@ -2,66 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./js/modules/login.js":
-/*!*****************************!*\
-  !*** ./js/modules/login.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-function login() {
-	class User {
-		constructor(login, password) {
-			this.login = login;
-			this.password = password;
-		}
-	}
-
-	const admin = new User('admin', '12345678');
-
-	const login = document.querySelector('input[name="login"]'),
-		  password = document.querySelector('input[name="password"]'),
-		  loginBtn = document.querySelector('button'),
-		  wrapper = document.querySelector('.wrapper');
-	
-	loginBtn.addEventListener('click', (e) => {
-		e.preventDefault();
-
-		const existError = document.querySelector('.error');
-		if (existError) {
-			existError.remove();
-		}
-
-		if (login.value === admin.login && password.value === admin.password) {
-			window.location.href = 'biblio.html';
-		} else {
-			const div = document.createElement('div');
-			div.classList.add('error');
-
-			if (login.value.trim() == '' || password.value.trim() == '') {
-				div.textContent = 'Заполните все поля!';
-				setTimeout(() => {
-					div.remove();
-				}, 3000);
-			} else {
-				div.textContent = 'У вас недостаточно прав, возможность регистрации будет предоставлена в ближайшем будущем.';
-				setTimeout(() => {
-					div.remove();
-				}, 3000)
-			}
-
-			wrapper.appendChild(div);
-		}
-	});
-}
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (login);
-
-/***/ }),
-
 /***/ "./js/modules/modal.js":
 /*!*****************************!*\
   !*** ./js/modules/modal.js ***!
@@ -72,8 +12,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function modal() {
-	console.log('1');
+function modal(mainModal, content, closeBtn, add) {
+	const modal = document.querySelector(mainModal),
+		  modalContent = document.querySelector(content),
+		  close = document.querySelector(closeBtn),
+		  addBtn = document.querySelector(add);
+
+	function openModal() {
+		modal.style.display = 'block';
+	}
+
+	function closeModal() {
+		modal.style.display = 'none';
+	}
+
+	addBtn.addEventListener('click', openModal);
+	close.addEventListener('click', closeModal);
+
+	modal.addEventListener('click', (e) => {
+		if (!modalContent.contains(e.target)) {
+			closeModal();
+		}
+	});
+
+	document.addEventListener('keydown', (e) => {
+		if (e.code == 'Escape') {
+			closeModal();
+		}
+	});
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
@@ -219,11 +185,9 @@ var __webpack_exports__ = {};
   !*** ./js/script.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_login__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/login */ "./js/modules/login.js");
-/* harmony import */ var _modules_server__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/server */ "./js/modules/server.js");
-/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/tabs */ "./js/modules/tabs.js");
-/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
-
+/* harmony import */ var _modules_server__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/server */ "./js/modules/server.js");
+/* harmony import */ var _modules_tabs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/tabs */ "./js/modules/tabs.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/modal */ "./js/modules/modal.js");
 
 
 
@@ -231,10 +195,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 window.addEventListener('DOMContentLoaded', () => {
-
-	(0,_modules_login__WEBPACK_IMPORTED_MODULE_0__["default"])();
-	(0,_modules_tabs__WEBPACK_IMPORTED_MODULE_2__["default"])('.list', '.books', '.list-item');
-	(0,_modules_modal__WEBPACK_IMPORTED_MODULE_3__["default"])();
+	(0,_modules_tabs__WEBPACK_IMPORTED_MODULE_1__["default"])('.list', '.books', '.list-item');
+	(0,_modules_modal__WEBPACK_IMPORTED_MODULE_2__["default"])('.modal', '.modal-content', '.close', '#add-book-btn');
 });
 })();
 

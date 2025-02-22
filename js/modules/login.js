@@ -10,9 +10,9 @@ function login() {
 
 	const login = document.querySelector('input[name="login"]'),
 		  password = document.querySelector('input[name="password"]'),
-		  loginBtn = document.querySelector('button'),
+		  loginBtn = document.querySelector('.login_btn'),
 		  wrapper = document.querySelector('.wrapper');
-	
+
 	loginBtn.addEventListener('click', (e) => {
 		e.preventDefault();
 
@@ -44,4 +44,4 @@ function login() {
 	});
 }
 
-export default login;
+login();
