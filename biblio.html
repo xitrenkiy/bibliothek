@@ -12,8 +12,8 @@
 </head>
 <body>
     <header>
-        <h1>📖 Моя Библиотека</h1>
-        <input type="text" placeholder="🔍 Поиск книг...">
+        <h1>📖 My Library</h1>
+        <input type="text" placeholder="🔍 Find book...">
         <button id="add-book-btn">➕ Add Book</button>
     </header>
     
@@ -29,72 +29,65 @@
         </aside>
         
         <section class="books read active">
-            <div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
-                <h3>1984</h3>
-                <p>Джордж Оруэлл</p>
-            </div>
-            <div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
-                <h3>Убить пересмешника</h3>
-                <p>Харпер Ли</p>
-            </div>
+
         </section>
 
 		<section class="books readed">
-            <div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
-                <h3>1984</h3>
-                <p>Джордж Оруэлл12</p>
-            </div>
-            <div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
-                <h3>Убить пересмешника</h3>
-                <p>Харпер Ли</p>
-            </div>
+
         </section>
 
 		<section class="books future">
-            <div class="book">
+            <!-- <div class="book">
                 <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
                 <h3>1984</h3>
                 <p>Джордж Оруэлл34</p>
-            </div>
-            <div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
-                <h3>Убить пересмешника</h3>
-                <p>Харпер Ли</p>
-            </div>
-			<div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8282165-L.jpg" alt="To Kill a Mockingbird">
-                <h3>Убить пересмешника</h3>
-                <p>Харпер Ли</p>
-            </div>
+            </div> -->
         </section>
     </main>
     
     <footer>
-        <p>© 2025 Bibliothek. Все права защищены.</p>
+        <p>© 2025 Library. All terms reserved.</p>
     </footer>
 
-	<div id="modal" class="modal">
+    <div id="modal" class="modal">
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Добавить книгу</h2>
-            <form>
-                <label for="book-title">Название книги:</label>
-                <input type="text" id="book-title" name="book-title" required>
-                
-                <label for="book-author">Автор:</label>
-                <input type="text" id="book-author" name="book-author" required>
-                
-                <label for="book-cover">Ссылка на обложку:</label>
-                <input type="url" id="book-cover" name="book-cover">
-                
-                <button type="submit">Добавить</button>
+            <h2>Add Book</h2>
+            <form class="add__book">
+                <label for="book-title">Book name:</label>
+                <input type="text" id="book-title" name="name" required>
+    
+                <label for="book-author">Book author:</label>
+                <input type="text" id="book-author" name="author" required>
+    
+                <label for="book-cover">Src on book:</label>
+                <input type="url" id="book-cover" name="src">
+    
+                <fieldset>
+                    <legend>Choose a category:</legend>
+                    <label class="radio-label">
+                        <input type="radio" name="status" value="read" required>
+                        Read
+                        <span class="custom-radio"></span>
+                    </label>
+    
+                    <label class="radio-label">
+                        <input type="radio" name="status" value="readed">
+                        Readed
+                        <span class="custom-radio"></span>
+                    </label>
+    
+                    <label class="radio-label">
+                        <input type="radio" name="status" value="future">
+                        Future
+                        <span class="custom-radio"></span>
+                    </label>
+                </fieldset>
+    
+                <button type="submit">Add</button>
             </form>
         </div>
-    </div>
+    </div>    
 
 	<script src="js/bundle.js"></script>
 </body>

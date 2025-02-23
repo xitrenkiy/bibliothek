@@ -1,0 +1,29 @@
+{
+  "books": [
+    {
+      "name": "Jordge",
+      "author": "Antoniy",
+      "src": "https://cakeshop.com.ua/images/uOCSdahv3UURlwxBqsRNliPco2n5EpLyhuaG2SsDaRw/h:5000/bG9jYWw/6Ly8vY2FrZXNob3AuY29tLnVhL3B1YmxpY19odG1sL3N0b3JhZ2UvYXBwL3B1YmxpYy9pbWcvcHJvZHVjdC84ODA1XzEuanBn",
+      "status": "read"
+    },
+    {
+      "src": "https://cakeshop.com.ua/images/uOCSdahv3UURlwxBqsRNliPco2n5EpLyhuaG2SsDaRw/h:5000/bG9jYWw/6Ly8vY2FrZXNob3AuY29tLnVhL3B1YmxpY19odG1sL3N0b3JhZ2UvYXBwL3B1YmxpYy9pbWcvcHJvZHVjdC84ODA1XzEuanBn",
+      "name": "Jordge1",
+      "author": "Antoniy",
+      "status": "readed"
+    },
+    {
+      "src": "https://cakeshop.com.ua/images/uOCSdahv3UURlwxBqsRNliPco2n5EpLyhuaG2SsDaRw/h:5000/bG9jYWw/6Ly8vY2FrZXNob3AuY29tLnVhL3B1YmxpY19odG1sL3N0b3JhZ2UvYXBwL3B1YmxpYy9pbWcvcHJvZHVjdC84ODA1XzEuanBn",
+      "name": "Jordge2",
+      "author": "Antoniy",
+      "status": "future"
+    },
+    {
+      "id": "1c61",
+      "name": "Максим лох228",
+      "author": "Чуркан123",
+      "src": "https://cakeshop.com.ua/images/uOCSdahv3UURlwxBqsRNliPco2n5EpLyhuaG2SsDaRw/h:5000/bG9jYWw/6Ly8vY2FrZXNob3AuY29tLnVhL3B1YmxpY19odG1sL3N0b3JhZ2UvYXBwL3B1YmxpYy9pbWcvcHJvZHVjdC84ODA1XzEuanBn",
+      "status": "readed"
+    }
+  ]
+}

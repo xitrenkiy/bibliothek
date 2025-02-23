@@ -152,6 +152,51 @@ footer {
     font-size: 20px;
 }
 
+/* Стилизация радио-кнопок */
+fieldset {
+    border: none;
+    margin: 15px 0;
+    padding: 0;
+    text-align: left;
+}
+
+legend {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.radio-label input {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-label .custom-radio {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    transition: 0.2s;
+}
+
+.radio-label input:checked + .custom-radio {
+    border-color: #5a3e2b;
+    background: #5a3e2b;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;
