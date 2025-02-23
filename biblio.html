@@ -14,7 +14,7 @@
     <header>
         <h1>📖 My Library</h1>
         <input type="text" placeholder="🔍 Find book...">
-        <button id="add-book-btn">➕ Add Book</button>
+        <button class="add" id="add-book-btn">➕ Add Book</button>
     </header>
     
     <main>
@@ -29,7 +29,12 @@
         </aside>
         
         <section class="books read active">
-
+            <div class="book">
+                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
+                <h3>1984</h3>
+                <p>Джордж Оруэлл34</p>
+                <button class="edit">Edit</button>
+            </div>
         </section>
 
 		<section class="books readed">
@@ -37,11 +42,7 @@
         </section>
 
 		<section class="books future">
-            <!-- <div class="book">
-                <img src="https://covers.openlibrary.org/b/id/8226191-L.jpg" alt="1984">
-                <h3>1984</h3>
-                <p>Джордж Оруэлл34</p>
-            </div> -->
+
         </section>
     </main>
     
@@ -87,7 +88,37 @@
                 <button type="submit">Add</button>
             </form>
         </div>
-    </div>    
+    </div>
+
+    <div id="edit__modal" class="modal">
+        <div id="edit__modal-content" class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit book</h2>
+            <form class="category">
+                <fieldset>
+                    <legend>Choose a category:</legend>
+                    <label class="radio-label">
+                        <input type="radio" name="status" value="read" required>
+                        Read
+                        <span class="custom-radio"></span>
+                    </label>
+    
+                    <label class="radio-label">
+                        <input type="radio" name="status" value="readed">
+                        Readed
+                        <span class="custom-radio"></span>
+                    </label>
+    
+                    <label class="radio-label">
+                        <input type="radio" name="status" value="future">
+                        Future
+                        <span class="custom-radio"></span>
+                    </label>
+                </fieldset>
+                <button type="submit">Edit</button>
+            </form>
+        </div>
+    </div>
 
 	<script src="js/bundle.js"></script>
 </body>

@@ -21,6 +21,7 @@ function cardBook(firstSection, secondSection, thirdSection) {
 					<img src="${this.src}" alt="">
 					<h3>${this.name}</h3>
 					<p>${this.author}</p>
+					<button class="edit">Edit</button>
 			`;
 
 			switch(this.status) {

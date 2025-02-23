@@ -1,19 +1,27 @@
-function modal(mainModal, content, closeBtn, add) {
+function modal({ mainModal, content, closeBtn, addBtn, editBtn }) {
 	const modal = document.querySelector(mainModal),
 		  modalContent = document.querySelector(content),
-		  close = document.querySelector(closeBtn),
-		  addBtn = document.querySelector(add);
+		  close = document.querySelectorAll(closeBtn);
 
-	function openModal() {
+	let activeModal = null;
+
+	function openModal(modalType) {
+		activeModal = modalType;
 		modal.style.display = 'block';
 	}
 
 	function closeModal() {
 		modal.style.display = 'none';
+		activeModal = null;
 	}
 
-	addBtn.addEventListener('click', openModal);
-	close.addEventListener('click', closeModal);
+	document.addEventListener('click', (e) => {
+		if (e.target.classList.contains(addBtn)) {
+			openModal('add');
+		} else if (e.target.classList.contains(editBtn)) {
+			openModal('edit');
+		}
+	});
 
 	modal.addEventListener('click', (e) => {
 		if (!modalContent.contains(e.target)) {
@@ -25,6 +33,10 @@ function modal(mainModal, content, closeBtn, add) {
 		if (e.code == 'Escape') {
 			closeModal();
 		}
+	});
+
+	close.forEach(item => {
+		item.addEventListener('click', closeModal);
 	});
 }
 
