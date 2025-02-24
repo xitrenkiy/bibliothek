@@ -23,18 +23,6 @@ window.addEventListener('DOMContentLoaded', () => {
 		editBtn: 'edit'
 	});
 	cardBook('.read', '.readed', '.future');
-	addBook();
-	// editBook();
-
-	console.log(getData('http://localhost:3000/books')
-		.then(data => {
-			console.log(data);
-			data.filter(item => {
-				const arr =  Object.entries(item);
-				arr.filter(element => {
-					console.log(element[1] == 'Jordge');
-				});
-			});
-		})
-	);
+	addBook('.add__book', '.books');
+	editBook('.category', '.books');
 });

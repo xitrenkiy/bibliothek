@@ -1,9 +1,9 @@
 import { postData } from "../services/server";
 import cardBook from "./book";
 
-function addBook() {
-	const form = document.querySelector('.add__book'),
-		  books = document.querySelectorAll('.books');
+function addBook(activeForm, booksWrapper) {
+	const form = document.querySelector(activeForm),
+		  books = document.querySelectorAll(booksWrapper);
 
 	function bindPostData(form) {
 		form.addEventListener('submit', (e) => {

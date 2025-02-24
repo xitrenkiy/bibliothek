@@ -20,18 +20,18 @@ const postData = async (url, data) => {
 	return await res.json();
 }
 
-const patchData = async (url, data) => {
-	const res = await fetch(url, {
+const patchData = async (activeId, newStatus) => {
+	const res = await fetch(`http://localhost:3000/books/${activeId}`, {
 		method: 'PATCH',
 		headers: {
 			"Content-type": "application/json"
 		},
 		body: JSON.stringify({
-			status:	data
+			status:	newStatus
 		})
 	});
 
-	return await res.json;
+	return await res.json();
 }
 
 export { getData };
